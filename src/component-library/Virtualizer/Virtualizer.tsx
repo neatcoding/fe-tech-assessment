@@ -83,7 +83,7 @@ export const Virtualizer = React.memo<{
         Math.floor((scrollLeft + containerWidth) / columnWidth)
       );
     },
-    []
+    [columnWidth, containerHeight, containerWidth, rowHeight]
   );
 
   return (
