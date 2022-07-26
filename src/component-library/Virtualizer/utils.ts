@@ -1,5 +1,5 @@
 export const checkNumberProp = (prop: any, fallback: number): number => {
-  if (typeof prop === "number") {
+  if (typeof prop === "number" && !isNaN(prop)) {
     return prop;
   } else {
     return fallback;
@@ -10,7 +10,7 @@ export const checkNumberOrFunctionProp = (
   prop: any,
   fallback: number
 ): number | ((index: number) => number) => {
-  if (typeof prop === "number" || typeof prop === "function") {
+  if ((typeof prop === "number" && !isNaN(prop)) || typeof prop === "function") {
     return prop;
   } else {
     return fallback;
