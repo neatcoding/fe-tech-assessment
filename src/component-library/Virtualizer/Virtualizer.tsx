@@ -1,40 +1,8 @@
-import React, { useCallback, useState } from "react";
+import React, {memo, useCallback, useState} from "react";
+import {checkFunctionProp, checkNumberOrFunctionProp, checkNumberProp} from "./utils";
 
-const checkNumberProp = (prop: any, fallback: number): number => {
-  if (typeof prop === "number") {
-    return prop;
-  } else {
-    return fallback;
-  }
-};
 
-const checkNumberOrFunctionProp = (
-  prop: any,
-  fallback: number
-): number | ((index: number) => number) => {
-  if (typeof prop === "number" || typeof prop === "function") {
-    return prop;
-  } else {
-    return fallback;
-  }
-};
-
-const checkFunctionProp = (
-  prop: any,
-  fallback: () => null
-): ((info: {
-  rowIndex: number;
-  columnIndex: number;
-  style: React.CSSProperties;
-}) => JSX.Element | null) => {
-  if (typeof prop === "function") {
-    return prop;
-  } else {
-    return fallback;
-  }
-};
-
-export const Virtualizer = React.memo<{
+export const Virtualizer = memo<{
   numRows: number;
   numColumns: number;
   rowHeight: number | ((index: number) => number);
