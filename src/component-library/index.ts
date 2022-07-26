@@ -1,1 +1,1 @@
-export * from "./Virtualizer";
+export * from "./Virtualizer/Virtualizer";

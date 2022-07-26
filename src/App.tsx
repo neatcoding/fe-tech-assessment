@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import styled from "styled-components";
 import { TextField } from "@material-ui/core";
 
-import { Virtualizer } from "./component-library/Virtualizer/Virtualizer";
+import { Virtualizer } from "./component-library";
 
 const Container = styled.div`
   min-height: 100vh;
